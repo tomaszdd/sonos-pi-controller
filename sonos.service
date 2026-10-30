@@ -1,0 +1,19 @@
+[Unit]
+Description=Sonos Controller
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=pi
+WorkingDirectory=/home/pi
+Environment=SDL_FBDEV=/dev/fb0
+Environment=HA_URL=http://homeassistant.local:8123
+# Long-lived access token from your Home Assistant profile page
+Environment=HA_TOKEN=CHANGE_ME
+ExecStartPre=/bin/sleep 15
+ExecStart=/usr/bin/python3 -u /home/pi/sonos_controller.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
