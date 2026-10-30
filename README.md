@@ -2,6 +2,8 @@
 
 A small touchscreen remote for Sonos speakers, built from a Raspberry Pi and a 2.8" Adafruit PiTFT. It talks to Sonos through the Home Assistant REST API. It draws straight to the framebuffer with Pillow, so it needs no X11 and no desktop.
 
+![Controller screen](screenshot.png)
+
 ## What it does
 - **Speaker tabs** along the top: tap one to switch which speaker you control.
 - **Now playing**: shows the title, artist or station, album art and a volume bar, refreshed every 3 seconds.
